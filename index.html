@@ -14,148 +14,158 @@
       .font-poppins {
           font-family: "Poppins", sans-serif;
         }
+      .bg-color {
+          display: none;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 20px;
+      }
     </style>
   </head>
-<body class="bg-gray-100 font-poppins px-4 sm:px-8 lg:px-40 py-6">
-    <nav class="flex justify-between bg-white rounded-xl pl-8 py-3 mb-5">
+<body class="bg-gray-100 font-poppins px-4 sm:px-8 lg:px-40">
+    <div class="bg-color">
+      <input type="color" id="color1" value="#F4F7FF" />
+      <input type="color" id="color2" value="#F4F7FF" />
+      <input type="range" id="angle" min="0" max="360" value="45" />
+    </div>
+    <br>
+    <nav class="flex justify-between bg-white rounded-xl pl-8 py-3 mb-5 pt-4">
       <div class="flex">
         <img src="assets/logo.png" class="w-10 h-10" alt="" />
         <p class="mt-1 text-2xl">Dev<span class="font-bold">Board</span></p>
       </div>
       <div class="grid grid-cols-3 gap-3">
-        <div class="flex">
+        <div class="rounded-full bg-cyan-50 flex w-22 h-12 p-2 justify-center items-center gap-2">
           <img src="assets/checkbox.png" class="w-6 h-6" alt="" srcset="" />
-          <p><span id="completed-count">23</span></p>
+          <h2 class="font-bold text-xl" id="completed-count">23</h2>
         </div>
-        <div id="randomize">
-          <img src="assets/theme-btn.png" class="w-6 h-6" alt="" srcset="" />
+        <div class="cursor-pointer mt-2" id="randomize">
+          <img src="assets/theme-btn.png" class="items-center justify-center w-8 h-8" alt="" srcset="" />
         </div>
       </div>
     </nav>
+    
     <div class="flex flex-col lg:flex-row gap-6 h-screen">
         <div class="lg:w-full space-y-6 h-full">
             <div class="bg-white lg:w-full shadow-md rounded-xl p-5">
               <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                <div class="bg-white p-6 justify-center rounded-lg shadow-md flex items-center">
+                  <div class="size-24 rounded-full bg-cyan-50 w-12 h-12 p-2 mr-4">
+                    <img src="assets/checkbox.png" class=" " alt="" />
+                  </div>
+                  <div>
                     <h2 class="text-lg font-semibold">Task Assigned</h2>
-                    <p id="task-count" class="text-4xl font-bold text-blue-500 mt-2">06</p>
+                    <p id="task-count" class="text-2xl font-bold text-black">6</p>     
+                  </div>
+
                 </div>
-                <div
-            class="rounded-xl cursor-pointer flex pl-10 pt-2 gap-3 bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8]" id="main-blog-box">
+            <div
+            class="rounded-xl cursor-pointer flex pl-10 pt-2 gap-3 bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8]" id="main-blog-box" onclick="window.location.href='blog.html'">
             <img src="assets/board.png" class="w-20 h-20" alt="" />
             <div>
               <h1 class="pt-3 text-white">Discover Something</h1>
               <h1 class="font-bold text-2xl text-white">New Today!</h1>
             </div>
           </div>
+          <div class="bg-white p-6 justify-center rounded-lg shadow-md flex items-center">
+            <div class="size-24 rounded-full bg-cyan-50 w-12 h-12 p-2 mr-4">
+              <img src="assets/calender.png" class=" " alt="" />
+            </div>
+            <div>
+              <h2 class="text-lg font-semibold">Today</h2>
+              <p id="current-date" class="text-2xl font-semibold text-black"></p>
+          </div>
+
+          </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <h2 class="text-lg font-semibold">Today</h2>
-                    <p id="current-date" class="text-xl font-bold text-blue-500"></p>
-                </div>
               </div>
 
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Task Cards -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="badge badge-outline">Meta</h3>
-                    <h2 class="text-lg font-bold mt-2">Improve AI Model</h2>
-                    <p class="text-sm text-gray-500 mt-1">Optimize recommendation system...</p>
-                    <p class="text-sm font-semibold mt-2">Deadline: <span class="text-blue-500">21 March 2025</span></p>
-                    <button class="btn btn-primary w-full mt-3" onclick="completeTask(this, 'Improve AI Model')">Complete</button>
+                <div class="bg-cyan-50 p-6 rounded-lg shadow-md">
+                    <h3 class="bg-white badge badge-outline">Shop Ease</h3>
+                    <h2 class="text-lg font-bold mt-2">Fix Mobile Button Issue</h2>
+                    <div class="p-3 rounded-xl bg-white mt-3">
+                      <p class="text-sm text-gray-500 ">A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                    </div>
+                    <div class="flex justify-between mt-3 items-center">
+                      <p class="text-sm font-semibold mt-2">Deadline: <br> <span class="text-black">21 March 2025</span></p>
+                    <button class="btn btn-primary border-none text-white w-[150px]" onclick="completeTask(this, 'Improve AI Model')">Complete</button>
+                    </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="badge badge-outline">Google LLC</h3>
-                    <h2 class="text-lg font-bold mt-2">Enhance Search Algorithm</h2>
-                    <p class="text-sm text-gray-500 mt-1">Improve ranking efficiency...</p>
-                    <p class="text-sm font-semibold mt-2">Deadline: <span class="text-blue-500">21 March 2025</span></p>
-                    <button class="btn btn-primary w-full mt-3" onclick="completeTask(this, 'Enhance Search Algorithm')">Complete</button>
+                <div class="bg-cyan-50 p-6 rounded-lg shadow-md">
+                  <h3 class="bg-white badge badge-outline">Soft Pay</h3>
+                  <h2 class="text-lg font-bold mt-2">Add Pay Success Modal</h2>
+                  <div class="p-3 rounded-xl bg-white mt-3">
+                    <p class="text-sm text-gray-500 mt-1">A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                  </div>
+                  <div class="flex justify-between mt-3 items-center">
+                    <p class="text-sm font-semibold mt-2">Deadline: <br> <span class="text-black">25 March 2025</span></p>
+                  <button class="btn btn-primary border-none text-white w-[150px]" onclick="completeTask(this, 'Improve AI Model')">Complete</button>
+                  </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="badge badge-outline">Glassdoar</h3>
-                    <h2 class="text-lg font-bold mt-2">Refactor Job Listings</h2>
-                    <p class="text-sm text-gray-500 mt-1">Improve user experience...</p>
-                    <p class="text-sm font-semibold mt-2">Deadline: <span class="text-blue-500">21 March 2025</span></p>
-                    <button class="btn btn-primary w-full mt-3" onclick="completeTask(this, 'Refactor Job Listings')">Complete</button>
+                <div class="bg-cyan-50 p-6 rounded-lg shadow-md">
+                  <h3 class="bg-white badge badge-outline">Meta</h3>
+                  <h2 class="text-lg font-bold mt-2">Add new reaction 🙌</h2>
+                  <div class="p-3 rounded-xl bg-white mt-3">
+                    <p class="text-sm text-gray-500 mt-1">A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                  </div>
+                  <div class="flex justify-between mt-3 items-center">
+                    <p class="text-sm font-semibold mt-2">Deadline: <br> <span class="text-black">31 March 2025</span></p>
+                  <button class="btn btn-primary border-none text-white w-[150px]" onclick="completeTask(this, 'Improve AI Model')">Complete</button>
+                  </div>      
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="badge badge-outline">Showcase</h3>
-                    <h2 class="text-lg font-bold mt-2">UI Redesign</h2>
-                    <p class="text-sm text-gray-500 mt-1">Modernize design layout...</p>
-                    <p class="text-sm font-semibold mt-2">Deadline: <span class="text-blue-500">30 March 2025</span></p>
-                    <button class="btn btn-primary w-full mt-3" onclick="completeTask(this, 'UI Redesign')">Complete</button>
-                </div>
+                <div class="bg-cyan-50 p-6 rounded-lg shadow-md">
+                  <h3 class="bg-white badge badge-outline">Programming Hero</h3>
+                  <h2 class="text-lg font-bold mt-2">Fix Video Loading Issue</h2>
+                  <div class="p-3 rounded-xl bg-white mt-3">
+                    <p class="text-sm text-gray-500 ">A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                  </div>
+                  <div class="flex justify-between mt-3 items-center">
+                    <p class="text-sm font-semibold mt-2">Deadline: <br> <span class="text-black">21 March 2025</span></p>
+                  <button class="btn btn-primary border-none text-white w-[150px]" onclick="completeTask(this, 'Improve AI Model')">Complete</button>
+                  </div>
+              </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="badge badge-outline">CloudSync</h3>
-                    <h2 class="text-lg font-bold mt-2">Optimize Storage</h2>
-                    <p class="text-sm text-gray-500 mt-1">Enhance cloud storage speed...</p>
-                    <p class="text-sm font-semibold mt-2">Deadline: <span class="text-blue-500">10 April 2025</span></p>
-                    <button class="btn btn-primary w-full mt-3" onclick="completeTask(this, 'Optimize Storage')">Complete</button>
+              <div class="bg-cyan-50 p-6 rounded-lg shadow-md">
+                <h3 class="bg-white badge badge-outline">Google LLC</h3>
+                <h2 class="text-lg font-bold mt-2">Integrate AI search</h2>
+                <div class="p-3 rounded-xl bg-white mt-3">
+                  <p class="text-sm text-gray-500 mt-1">A card component has a figure, a body part, and inside body there are title and actions parts</p>
                 </div>
+                <div class="flex justify-between mt-3 items-center">
+                  <p class="text-sm font-semibold mt-2">Deadline: <br> <span class="text-black">01 April 2025</span></p>
+                <button class="btn btn-primary border-none text-white w-[150px]" onclick="completeTask(this, 'Improve AI Model')">Complete</button>
+                </div>
+              </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="badge badge-outline">SwiftPay</h3>
-                    <h2 class="text-lg font-bold mt-2">Enhance Payment Security</h2>
-                    <p class="text-sm text-gray-500 mt-1">Implement new encryption...</p>
-                    <p class="text-sm font-semibold mt-2">Deadline: <span class="text-blue-500">18 April 2025</span></p>
-                    <button class="btn btn-primary w-full mt-3" onclick="completeTask(this, 'Enhance Payment Security')">Complete</button>
+              <div class="bg-cyan-50 p-6 rounded-lg shadow-md">
+                <h3 class="bg-white badge badge-outline">Polygon Tech</h3>
+                <h2 class="text-lg font-bold mt-2">Review Ami Probashi Site</h2>
+                <div class="p-3 rounded-xl bg-white mt-3">
+                  <p class="text-sm text-gray-500 mt-1">A card component has a figure, a body part, and inside body there are title and actions parts</p>
                 </div>
+                <div class="flex justify-between mt-3 items-center">
+                  <p class="text-sm font-semibold mt-2">Deadline: <br> <span class="text-black">05 May 2025</span></p>
+                <button class="btn btn-primary border-none text-white w-[150px]" onclick="completeTask(this, 'Improve AI Model')">Complete</button>
+                </div>      
+              </div>
             </div>
             </div>
         </div>
 
         <!-- Activity Log Section -->
         <div class="lg:w-1/4 bg-white p-6 rounded-lg shadow-md flex flex-col space-y-4 h-[760px]">
-            <h2 class="text-lg font-bold">Activity Log</h2>
+            <h2 class="text-2xl font-bold">Activity Log</h2>
             <button class="btn btn-secondary w-full mt-4" onclick="clearHistory()">Clear History</button>
             <div id="activity-log" class="mt-4 text-sm text-gray-600 flex-1 overflow-y-auto"></div>
         </div>
     </div>
 
-    <script>
-        function completeTask(button, taskName) {
-            button.textContent = "Completed";
-            button.classList.remove("btn-primary");
-            button.classList.add("btn-disabled");
-            button.disabled = true;
-
-            let taskCount = document.getElementById("task-count");
-            let completedCount = document.getElementById("completed-count");
-            let currentDate = new Date().toLocaleDateString();
-
-            taskCount.textContent = Math.max(0, taskCount.textContent - 1);
-            completedCount.textContent = `✅ ${parseInt(completedCount.textContent.replace('✅ ', '')) + 1}`;
-
-            // Log the completion activity
-            let log = document.getElementById("activity-log");
-            let entry = document.createElement("p");
-            entry.textContent = `${currentDate}: Completed "${taskName}"`;
-            log.prepend(entry);
-
-            // Alert after task completion
-            alert(`You have completed the task: "${taskName}"`);
-
-            // Check if all tasks are completed
-            if (parseInt(taskCount.textContent) === 0) {
-                setTimeout(function () {
-                    alert("🎉 Congratulations! You've completed all tasks! 🎉");
-                }, 500);
-            }
-        }
-
-        function clearHistory() {
-            document.getElementById("activity-log").innerHTML = "";
-        }
-
-        function updateDate() {
-            document.getElementById("current-date").textContent = new Date().toLocaleDateString();
-        }
-
-        updateDate();
-    </script>
+    <script src="script/main.js"></script>
+    <script src="script/bg-color.js"></script>
 </body>
 </html>

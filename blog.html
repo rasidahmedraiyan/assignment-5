@@ -17,60 +17,59 @@
     </style>
   </head>
 <body class="bg-gray-100 font-poppins px-4 sm:px-8 lg:px-40 py-6">
-    <nav class="flex justify-between bg-white rounded-xl pl-8 py-3 mb-5">
+      <nav class="flex justify-between bg-white rounded-xl pl-8 py-3 mb-5">
         <div class="flex">
           <img src="assets/logo.png" class="w-10 h-10" alt="" />
           <p class="mt-1 text-2xl">Dev<span class="font-bold">Board</span></p>
         </div>
-        <button id="back-btn" class="btn bg-[#3752FD] border-none text-white w-[150px] mr-5">Back</button>
+        <button id="back-btn" class="btn bg-[#3752FD] border-none text-white w-[150px] mr-5">Back to Desk</button>
       </nav>
-      <section class="grid bg-white rounded-xl pl-8 py-3 mt-3 gap-3">
-        <h1>Question-1: What are the different ways to select an element in the DOM?</h1>
+      <section class="flex flex-col items-center">
+        <h1 class="text-3xl font-bold  ">Blogs</h1>
+      </section>
+      <section class="grid bg-white rounded-xl px-8 py-6 mt-4 gap-3">
+        <h1 class="font-bold text-2xl">Question-1: What are the different ways to select an element in the DOM?</h1>
         <hr>
         <p>
-            Answer : getElementById(),getElementsByClassName(),getElementsByName(),querySelector().
+          <li>getElementById() – Selects one element by its ID.</li>
+          <li>getElementsByClassName() – Selects all elements with a class name.</li>
+          <li>getElementsByName() – Selects elements by their name attribute.</li>
+          <li>querySelector() – Selects the first element that matches a CSS selector.</li>
         </p>
       </section>
-      <section class="grid bg-white rounded-xl pl-8 py-3 mt-3 gap-3">
-        <h1>Question-2: What is the difference between innerHTML, innerText, and textContent ?</h1>
+      <section class="grid bg-white rounded-xl px-8 py-6 mt-6 gap-3">
+        <h1 class="font-bold text-2xl">Question-2: What is the difference between innerHTML, innerText, and textContent ?</h1>
         <hr>
         <p>
-            Answer : innerHTML (Includes HTML Tags)
-            
-                <li>Reads or writes HTML content, so it can be used to insert HTML elements dynamically.</li>
-                <li>If used with user input, it can lead to XSS (Cross-Site Scripting) attacks.</li>
-                innerText
-                <li>Gets or sets only visible text (ignores hidden elements via CSS like display: none).</li>
-                <li>Slow because it triggers reflow (calculates styles before fetching text).</li>
-                textContent
-                <li>Gets or sets all text inside an element, including hidden text.</li>
-                <li>Fastest because it doesn’t parse HTML or calculate styles.</li>
+          <li>innerHTML – Gets or sets HTML code (includes tags).</li>
+          <li>innerText – Gets or sets only visible text (hides CSS-hidden text).</li>
+          <li>textContent – Gets or sets all text (including hidden), faster than innerText.</li>
         </p>
       </section>
-      <section class="grid bg-white rounded-xl pl-8 py-3 mt-3 gap-3">
-        <h1>Question-3: What is event delegation in the DOM?</h1>
+      <section class="grid bg-white rounded-xl px-8 py-6 mt-6 gap-3">
+        <h1 class="font-bold text-2xl">Question-3: What is event delegation in the DOM?</h1>
         <hr>
         <p>
-            Answer : Event delegation is a technique in JavaScript where instead of adding event listeners to multiple child elements, you add a single event listener to a parent element. The event then bubbles up from the child to the parent, allowing you to handle multiple elements efficiently.
+          Event delegation means adding one event listener to a parent element to handle events from its children. It's useful when you have many similar elements.
         </p>
       </section>
-      <section class="grid bg-white rounded-xl pl-8 py-3 mt-3 gap-3">
-        <h1>Question-4: What is event bubbling in the DOM?</h1>
+      <section class="grid bg-white rounded-xl px-8 py-6 mt-6 gap-3">
+        <h1 class="font-bold text-2xl">Question-4: What is event bubbling in the DOM?</h1>
         <hr>
         <p>
-            Answer : Event bubbling is a process in the DOM where an event starts at the target element and then propagates (bubbles up) to its parent elements until it reaches the root (<html> or document).
+          Event bubbling is when an event starts at the clicked element and moves up through its parent elements to the top (document).
         </p>
       </section>
-      <section class="grid bg-white rounded-xl pl-8 py-3 mt-3 gap-3">
-        <h1>Question-5: How do you create, add, and remove elements using JavaScript?</h1>
+      <section class="grid bg-white rounded-xl px-8 py-6 mt-6 gap-3">
+        <h1 class="font-bold text-2xl">Question-5: How do you create, add, and remove elements using JavaScript?</h1>
         <hr>
         <p>
-            Answer : The document.createElement(tagName) method creates a new element but does not add it to the DOM. <br>
-            Adds a new element as the last child of a parent element appendChild(). <br>
-            Adds an element before a specific child insertBefore(). <br>
-            append() – Adds content at the end of an element. <br>
-            prepend() – Adds content at the beginning of an element. <br>
-            Replaces an existing element with a new one replaceChild().
+          <li>createElement() – Creates a new HTML element.</li>
+          <li>appendChild() – Adds the element at the end of a parent.</li>
+          <li>insertBefore() – Inserts before another element.</li>
+          <li>append() – Adds at the end (can add text or elements).</li>
+          <li>prepend() – Adds at the beginning.</li>
+          <li>replaceChild() – Replaces an old element with a new one.</li>
         </p>
       </section>
       <script>
