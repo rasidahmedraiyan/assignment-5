@@ -16,16 +16,13 @@ function completeTask(button, taskName) {
     taskCount.textContent = Math.max(0, taskCount.textContent - 1);
     completedCount.textContent = `${parseInt(completedCount.textContent.replace(' ', '')) + 1}`;
 
-    // Log the completion activity
     let log = document.getElementById("activity-log");
     let entry = document.createElement("p");
     entry.textContent = `You have completed the task: "${taskName}" at ${currentTime}`;
     log.prepend(entry);
-
-    // Alert after task completion
+ 
     alert(`Board updated Successfully`);
 
-    // Check if all tasks are completed
     if (parseInt(taskCount.textContent) === 0) {
         setTimeout(function () {
             alert("🎉 Congrats!!! You have completed all the Current Task");
